@@ -19,11 +19,9 @@ website:
         - text: "---"
         - topics.qmd        
         - text: "---"
-        - topics/hybrid-identity.qmd
+        - topics/cost-and-accounting.qmd
         - text: "---"       
-        - topics/identity-protection.qmd
-        - text: "---"
-        - topics/privileged-identity-management.qmd        
+        - topics/new-development-project.qmd       
 format:
   html:
     theme: cosmo
