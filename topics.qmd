@@ -1,3 +1,7 @@
 ---
 title: "Topics"
 ---
+
+[Cost and Accounting]https://vanheemstrasystems.github.io/learning-azure-governance/topics/cost-and-accounting.html
+
+[New Development Project]https://vanheemstrasystems.github.io/learning-azure-governance/topics/cost-and-accounting.html
