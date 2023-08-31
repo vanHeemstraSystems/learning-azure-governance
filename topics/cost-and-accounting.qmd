@@ -19,7 +19,6 @@ Tasks
 
 - Design two alternative hierarchies and explain your decision-making process.
 
-
 ![](https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg){.center}
 
 ![](../images/subscription_groups.png){.center}
