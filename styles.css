@@ -1,5 +1,7 @@
 /* css styles */
-.center{
+.center {
   margin: 0!important;
-  height: 30px;
+}
+.medium_image {
+  height: 200px;
 }
