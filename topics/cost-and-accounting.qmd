@@ -1,5 +1,6 @@
 ---
 title: "Cost and Accounting"
+css: ../styles.css
 ---
 
 Source: https://github.com/MicrosoftLearning/AZ-305-DesigningMicrosoftAzureInfrastructureSolutions/blob/master/Instructions/CaseStudy/01-Governance.md
