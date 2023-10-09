@@ -1,1 +1,140 @@
+@startuml C1_Azure_Governance_SystemContext
+'Alt + D to preview
+!pragma revision 1
+!theme toy
 
+' LAYOUT_TOP_DOWN()
+' LAYOUT_AS_SKETCH()
+' LAYOUT_WITH_LEGEND()
+
+'C4
+'!define C4 https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master
+'!includeurl C4/C4.puml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+'!includeurl C4/C4_Context.puml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+'!includeurl C4/C4_Container.puml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+'!includeurl C4/C4_Component.puml
+
+'Azure
+'Search the full list here: <https://github.com/plantuml-stdlib/Azure-PlantUML/blob/master/AzureSymbols.md#azure-symbols>
+!define Azure https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
+!includeurl Azure/AzureCommon.puml
+!includeurl Azure/AzureC4Integration.puml
+!includeurl Azure/Web/AzureWebApp.puml
+!includeurl Azure/Management/AzureResourceGroups.puml
+!includeurl Azure/Networking/AzureIPAddressSpace.puml
+!includeurl Azure/Compute/AzureVirtualMachineScaleSet.puml
+!includeurl Azure/Networking/AzureRouteTable.puml
+!includeurl Azure/Networking/AzureNSG.puml
+!includeurl Azure/Networking/AzureLoadBalancer.puml
+!includeurl Azure/Storage/AzureDiskStorage.puml
+!includeurl Azure/Containers/AzureKubernetesService.puml
+!includeurl Azure/Containers/AzureContainerRegistry.puml
+!includeurl Azure/Security/AzureKeyVault.puml
+!includeurl Azure/Storage/AzureBlobStorage.puml
+
+'Comment/uncomment the next line for simplified view of Azure sprites
+'!includeurl Azure/AzureSimplified.puml
+
+'FontAwesome and other icon sets
+' Search the full list here: <https://github.com/tupadr3/plantuml-icon-font-sprites#icon-sets>
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+!includeurl ICONURL/font-awesome-5/file_excel.puml
+
+title 
+<b>[System Context] Azure Governance</b>
+<i>October 2023</i>
+end title
+
+'left to right direction
+
+Person(personACME, "ACME", "The Netherlands")
+Person(personABC, "ABC", "Some Sector")
+Person(personDEF, "DEF, "Some Group")
+Person(personGHI, "GHI", "Some Team")
+System_Boundary(systemboundarySubscription, "Azure Subscription foobar") {
+    AzureResourceGroups(resourcegroupsAdminFoobar, "Foobar", "foobar") {
+        AzureVirtualMachineScaleSet(vmABC, "ABC", "abc")
+        AzureVirtualMachineScaleSet(vmDEF, "DEF", "def")
+    }
+    AzureResourceGroups(resourcegroupsABC, "ABC", "abc-rg") {
+        AzureIPAddressSpace(ipaddressspaceABC, "ABC", "abc")
+        AzureRouteTable(routetable, "ABC RouteTable", "abc-routetable")
+        AzureNSG(nsgABCNSG, "ABC NSG", "abc-nsg")
+        AzureNSG(nsgDEFNSG, "DEF NSG", "def-nsg")
+        AzureNSG(nsgGHINSG, "GHI NSG", "ghi-nsg")
+        AzureNSG(nsgJKLNSG, "JKL NSG", "jkl-nsg")
+        AzureNSG(nsgMNONSG, "MNO NSG", "mno-nsg")              
+    }
+    AzureResourceGroups(resourcegroupsDEF, "DEF", "def-rg") {
+        AzureKubernetesService(kubernetesserviceABC, "ABC", "abc")
+        AzureContainerRegistry(containerregistryABC, "ABC", "abc")
+        AzureKeyVault(keyvaultABC, "ABC", "abc")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+        AzureBlobStorage(blobstorageABC, "ABC", "abc")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+        AzureBlobStorage(blobstorageDEF, "DEF", "def")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+        AzureBlobStorage(blobstorageGHI, "GHI", "ghi")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+    }
+    AzureResourceGroups(resourcegroupsGHI, "GHI", "ghi-rg") {
+        AzureNSG(nsgABC, "ABC NSG", "abc")
+        AzureLoadBalancer(loadbalancerABC, "ABC LoadBalancer", "abc")
+        AzureLoadBalancer(loadbalancerDEF, "DEF LoadBalancer", "def")
+        AzureVirtualMachineScaleSet(vmABC, "ABC VM Pool", "abc")
+        AzureVirtualMachineScaleSet(vmDEF, "DEF VM Pool", "def")
+        AzureVirtualMachineScaleSet(vmGHI, "GHI VM Pool", "ghi")
+        AzureVirtualMachineScaleSet(vmJKL, "JKL VM Pool", "jkl")
+        AzureVirtualMachineScaleSet(vmMNO, "MNO VM Pool", "mno")
+        AzureVirtualMachineScaleSet(vmPQR, "PQR VM Pool", "pqr")
+        AzureVirtualMachineScaleSet(vmSTU, "STU VM Pool", "stu")
+        AzureDiskStorage(diskstorageABC,"ABC", "abc")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+        AzureDiskStorage(diskstorageDEF,"DEF", "def")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+        AzureDiskStorage(diskstorageGHI,"GHI", "ghi")
+        note right #LightYellow
+          Some Note
+          ....
+          Article #
+        end note
+    }
+    'AzureWebApp(containerAlias, "Label", "Technology", "Optional Description")
+    'Component(systemAlias, "Label", "Technology", "Optional Description", $sprite=file_excel)
+}
+
+personACME --> personABC : Organizes
+personABC --> personDEF : Organizes
+personDEF --> personGHI : Organizes
+personGHI --> systemboundarySubscription : Subscribed to
+'resourcegroupsABC --> containerAlias : Uses\n[Optional Technology]
+'containerAlias -right-> systemAlias #Purple : Generates
+
+@enduml
