@@ -1,7 +1,7 @@
 @startuml C1_Azure_Governance_SystemContext
 'Alt + D to preview
 !pragma revision 1
-!theme toy
+'!theme toy
 
 ' LAYOUT_TOP_DOWN()
 ' LAYOUT_AS_SKETCH()
@@ -52,7 +52,7 @@ end title
 
 Person(personACME, "ACME", "The Netherlands")
 Person(personABC, "ABC", "Some Sector")
-Person(personDEF, "DEF, "Some Group")
+Person(personDEF, "DEF", "Some Group")
 Person(personGHI, "GHI", "Some Team")
 System_Boundary(systemboundarySubscription, "Azure Subscription foobar") {
     AzureResourceGroups(resourcegroupsAdminFoobar, "Foobar", "foobar") {
