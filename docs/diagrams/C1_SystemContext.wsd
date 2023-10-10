@@ -52,14 +52,14 @@ end title
 
 Person(personACME, "ACME", "Some Country")
 Person(personABC, "ABC", "Some Sector")
-'Person(personDEF, "DEF", "Some Group")
-'Person(personGHI, "GHI", "Some Team")
-'System_Boundary(systemboundarySubscription, "Azure Subscription foobar") {
-'    AzureResourceGroups(resourcegroupsAdminFoobar, "Foobar", "foobar") {
+Person(personDEF, "DEF", "Some Group")
+Person(personGHI, "GHI", "Some Team")
+System_Boundary(systemboundarySubscription, "Azure Subscription foobarbaz") {
+    AzureResourceGroups(resourcegroupsFoo, "Foo", "foo-rg") {
 '        AzureVirtualMachineScaleSet(vmABC, "ABC", "abc")
 '        AzureVirtualMachineScaleSet(vmDEF, "DEF", "def")
-'    }
-'    AzureResourceGroups(resourcegroupsABC, "ABC", "abc-rg") {
+    }
+    AzureResourceGroups(resourcegroupsABC, "Bar", "bar-rg") {
 '        AzureIPAddressSpace(ipaddressspaceABC, "ABC", "abc")
 '        AzureRouteTable(routetable, "ABC RouteTable", "abc-routetable")
 '        AzureNSG(nsgABCNSG, "ABC NSG", "abc-nsg")
@@ -67,8 +67,8 @@ Person(personABC, "ABC", "Some Sector")
 '        AzureNSG(nsgGHINSG, "GHI NSG", "ghi-nsg")
 '        AzureNSG(nsgJKLNSG, "JKL NSG", "jkl-nsg")
 '        AzureNSG(nsgMNONSG, "MNO NSG", "mno-nsg")              
-'    }
-'    AzureResourceGroups(resourcegroupsDEF, "DEF", "def-rg") {
+    }
+    AzureResourceGroups(resourcegroupsBaz, "Baz", "baz-rg") {
 '        AzureKubernetesService(kubernetesserviceABC, "ABC", "abc")
 '        AzureContainerRegistry(containerregistryABC, "ABC", "abc")
 '        AzureKeyVault(keyvaultABC, "ABC", "abc")
@@ -95,7 +95,7 @@ Person(personABC, "ABC", "Some Sector")
 '          ....
 '          Article #
 '        end note
-'    }
+    }
 '    AzureResourceGroups(resourcegroupsGHI, "GHI", "ghi-rg") {
 '        AzureNSG(nsgABC, "ABC NSG", "abc")
 '        AzureLoadBalancer(loadbalancerABC, "ABC LoadBalancer", "abc")
@@ -131,9 +131,9 @@ Person(personABC, "ABC", "Some Sector")
 }
 
 personACME --> personABC : Organizes
-'personABC --> personDEF : Organizes
-'personDEF --> personGHI : Organizes
-'personGHI --> systemboundarySubscription : Subscribed to
+personABC --> personDEF : Organizes
+personDEF --> personGHI : Organizes
+personGHI --> systemboundarySubscription : Subscribed to
 'resourcegroupsABC --> containerAlias : Uses\n[Optional Technology]
 'containerAlias -right-> systemAlias #Purple : Generates
 
