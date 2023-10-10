@@ -45,12 +45,12 @@
 
 title 
 <b>[System Context] Azure Governance</b>
-<i>October 2023</i>
+<i>Month Year</i>
 end title
 
 'left to right direction
 
-Person(personACME, "ACME", "The Netherlands")
+Person(personACME, "ACME", "Some Country")
 Person(personABC, "ABC", "Some Sector")
 'Person(personDEF, "DEF", "Some Group")
 'Person(personGHI, "GHI", "Some Team")
